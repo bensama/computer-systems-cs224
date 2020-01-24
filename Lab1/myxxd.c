@@ -42,7 +42,31 @@ FILE *parseCommandLine(int argc, char **argv, int *bits) {
  * size: the size of the array
  **/
 void printDataAsHex(unsigned char *data, size_t size) {
-  printf("TODO 1: printDataAsHex (2)");
+  // grab data from data array
+  // print in pairs seperated by space
+  
+  char str1[16] = {0x44, 0x45, 0x46, 0x45, 0x62, 0x63, 0x64, 0x65, 0x44, 0x45, 0x46, 0x0, 0x62, 0x63, 0x64, 0x65};
+  
+  int j = sizeof(str1)/sizeof(str1[0]);
+
+  for (int i = 0; i < j; i = i + 1) {
+
+    // print the hex
+
+    printf("%x", str1[i]);
+
+    // check if end of array
+
+    if (i != j - 1) {
+
+      // check if placement is even or odd, if even then follow by a space
+
+      if (i % 2 != 0) {
+        printf(" ");
+      }
+    }
+  }
+  //printf("TODO 1: printDataAsHex (2)");
 }
 
 /**
