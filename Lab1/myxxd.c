@@ -42,8 +42,10 @@ FILE *parseCommandLine(int argc, char **argv, int *bits) {
  * size: the size of the array
  **/
 void printDataAsHex(unsigned char *data, size_t size) {
-  // grab data from data array
-  // print in pairs seperated by space
+  /*
+    TODO: grab value from *data array, print as a hex
+  */
+  
   
   char str1[16] = {0x44, 0x45, 0x46, 0x45, 0x62, 0x63, 0x64, 0x65, 0x44, 0x45, 0x46, 0x0, 0x62, 0x63, 0x64, 0x65};
   
