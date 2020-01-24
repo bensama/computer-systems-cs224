@@ -43,23 +43,19 @@ FILE *parseCommandLine(int argc, char **argv, int *bits) {
  **/
 void printDataAsHex(unsigned char *data, size_t size) {
   /*
-    TODO: grab value from *data array, print as a hex
+    * FINISHED: grab value from *data array, print as a hex. 
+    TODO: If size is less than 16, print rest of line with spaces
   */
-  
-  
-  char str1[16] = {0x44, 0x45, 0x46, 0x45, 0x62, 0x63, 0x64, 0x65, 0x44, 0x45, 0x46, 0x0, 0x62, 0x63, 0x64, 0x65};
-  
-  int j = sizeof(str1)/sizeof(str1[0]);
 
-  for (int i = 0; i < j; i = i + 1) {
+  for (unsigned int i = 0; i < size; i = i + 1) {
 
     // print the hex
 
-    printf("%x", str1[i]);
+    printf("%x", data[i]);
 
     // check if end of array
 
-    if (i != j - 1) {
+    if (i != size - 1) {
 
       // check if placement is even or odd, if even then follow by a space
 
@@ -68,7 +64,6 @@ void printDataAsHex(unsigned char *data, size_t size) {
       }
     }
   }
-  //printf("TODO 1: printDataAsHex (2)");
 }
 
 /**
