@@ -42,26 +42,18 @@ FILE *parseCommandLine(int argc, char **argv, int *bits) {
  * size: the size of the array
  **/
 void printDataAsHex(unsigned char *data, size_t size) {
-  /*
-    * FINISHED: grab value from *data array, print as a hex. 
-    TODO: If size is less than 16, print rest of line with spaces
-  */
-
-  for (unsigned int i = 0; i < size; i = i + 1) {
-
-    // print the hex
-
-    printf("%x", data[i]);
-
-    // check if end of array
-
-    if (i != size - 1) {
-
-      // check if placement is even or odd, if even then follow by a space
-
-      if (i % 2 != 0) {
-        printf(" ");
-      }
+  printf(" ");
+  for (unsigned int i = 0; i < 16; i = i + 1) {
+    if (i < size) {
+      // print the hex
+      printf("%02x", data[i]);
+    }
+    else {
+      printf("  ");
+    }
+    // check if placement is even or odd, if even then follow by a space
+    if (i % 2 == 1) {
+      printf(" ");
     }
   }
 }
@@ -75,7 +67,16 @@ void printDataAsHex(unsigned char *data, size_t size) {
  * size: the size of the array
  **/
 void printDataAsChars(unsigned char *data, size_t size) {
-  printf("TODO 2: printDataAsChars (3)");
+  for (unsigned int i = 0; i < size; i = i + 1) {
+    // print the ascii
+    if ((data[i]>=32 && data[i]<127)) {
+        printf("%c", data[i]);
+    }
+    else {
+      // non-printable
+      printf("."); 
+    }
+  }
 }
 
 void readAndPrintInputAsHex(FILE *input) {
@@ -86,7 +87,7 @@ void readAndPrintInputAsHex(FILE *input) {
     printf("%08x:", offset);
     offset += numBytesRead;
     printDataAsHex(data, numBytesRead);
-    printf("  ");
+    printf(" ");
     printDataAsChars(data, numBytesRead);
     printf("\n");
     numBytesRead = fread(data, 1, 16, input);
@@ -101,7 +102,53 @@ void readAndPrintInputAsHex(FILE *input) {
  * input: input stream
  **/
 void readAndPrintInputAsBits(FILE *input) {
-  printf("TODO 3: readAndPrintInputAsBits\n");
+  static unsigned char data[6];
+  int numBytesRead = fread(data, 1, 6, input);
+  unsigned int offset = 0;
+  while (numBytesRead != 0) {
+    printf("%08x:", offset);
+    offset += numBytesRead;
+
+    // * Printing bits
+
+    printf(" ");
+    for (unsigned int i = 0; i < 6; i = i + 1) {
+      if (i < numBytesRead) {
+
+        // print the binary
+        for(int j = 7; j >= 0; j--) {
+          if((data[i]>>j & 1) == 1) {
+            printf("1");
+          }
+          else {
+            printf("0");
+          }
+        }
+      }
+      else {
+        printf("        ");
+      }
+      // space in between bits
+      printf(" ");
+    }
+    printf(" ");
+
+    // * Print ascii
+
+    for (unsigned int i = 0; i < numBytesRead; i = i + 1) {
+      // print the ascii
+      if ((data[i]>=32 && data[i]<127)) {
+          printf("%c", data[i]);
+      }
+      else {
+        // non-printable
+        printf("."); 
+      }
+    }
+    printf("\n");
+
+    numBytesRead = fread(data, 1, 6, input);
+  }
 }
 
 int main(int argc, char **argv) {
