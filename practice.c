@@ -1,13 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    char str[] = "x.";
+    char p[0] = {0x77ad5f32};
 
-    for (int i = 0; i < 3; i++) {
-        printf("%x ", str[i]);
-    }
-
-    
+    int *a = (int *)p;
+    printf("%x", *a);
 
     return 0;
 }
