@@ -1,0 +1,27 @@
+Ben Paine HW-1
+
+
+1. Question 1
+   a. 01000010
+   b. 01100011
+   c. 42
+   d. 43
+   e. stx
+   f. etx
+   g. ht
+   h. 0x77ad5f32
+   i. 0x77ad5f36
+   j. 5559
+2. Question 2
+   a. BN4s
+   b. aWK,
+   c. *@Q=
+3. Question 3
+   a. 65736952
+   b. +Shout+
+   c. 21555942
+4. Question 4
+   a. 292a86cb5f86cb2a
+   b. 2820212124
+   c. 323220736320
+   d. 333c2049
