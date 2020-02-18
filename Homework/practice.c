@@ -1,9 +1,12 @@
 #include <stdio.h>
-
-int main() {
-    void *p = "0x7d48";
-    int *a = (int *)p;
-
-    printf("%x\n", *a);
+#define SIZE 4
+int main()
+{
+    int a[SIZE];
+    char *s_ptr = (char *)(a + 1);
+    scanf("%x", a);
+    scanf("%s", s_ptr);
+    scanf("%x", &a[3]);
+    printf("%s", (char *)a);
     return 0;
 }
