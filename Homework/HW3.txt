@@ -1,0 +1,16 @@
+Ben Paine HW3
+
+1. 
+   a. irmovq 10, %rax
+   b. addq %rax, %rcx
+   c. andq %rax, %rax
+      mrmovq (%rax), %r10
+      addq %rax, %rbx
+   d. rrmovq %rax, %rcx
+      rrmovq %rbx, %rax
+      rrmovq %rcx, %rbx
+   e. irmovq a, %rdx
+   f. 
+
+2.
+   
