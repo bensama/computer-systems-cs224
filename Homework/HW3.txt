@@ -4,13 +4,37 @@ Ben Paine HW3
    a. irmovq 10, %rax
    b. addq %rax, %rcx
    c. andq %rax, %rax
-      mrmovq (%rax), %r10
-      addq %rax, %rbx
+      call ifzero
    d. rrmovq %rax, %rcx
       rrmovq %rbx, %rax
       rrmovq %rcx, %rbx
    e. irmovq a, %rdx
-   f. 
+   f. irmovq 0xbbbb,%rax
+      irmovq b,%rcx
+      rmmovq %rax,(%rcx)
 
 2.
-   
+   irmovq $3,%rax
+# YOUR CODE HERE
+
+irmovq src,%r8
+irmovq dest,%r9
+irmovq $1,%rcx
+
+loop: 
+    mrmovq (%r8),%rdx
+    rmmovq %r8,(%r9)        #move
+    subq %rcx,%rax           #count --
+    jmp loop
+
+.align 8
+# Source block
+src:
+    .quad 0xaaaa
+    .quad 0xbbbb
+    .quad 0xcccc
+# Destination block
+dest:
+    .quad 0x1111
+    .quad 0x2222
+    .quad 0x3333
