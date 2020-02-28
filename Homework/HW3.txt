@@ -13,28 +13,36 @@ Ben Paine HW3
       irmovq b,%rcx
       rmmovq %rax,(%rcx)
 
-2.
+2. 
    irmovq $3,%rax
-# YOUR CODE HERE
+   # YOUR CODE HERE
+   ###
 
-irmovq src,%r8
-irmovq dest,%r9
-irmovq $1,%rcx
+   irmovq src, %r13 #set source
+   irmovq dest, %r14 #set dest
+   irmovq 0, %rbx  #start of loop
+   irmovq 1, %r12  #loop counter
+   irmovq 8, %r10
 
-loop: 
-    mrmovq (%r8),%rdx
-    rmmovq %r8,(%r9)        #move
-    subq %rcx,%rax           #count --
-    jmp loop
-
-.align 8
-# Source block
-src:
-    .quad 0xaaaa
-    .quad 0xbbbb
-    .quad 0xcccc
-# Destination block
-dest:
-    .quad 0x1111
-    .quad 0x2222
-    .quad 0x3333
+   loop:
+      mrmovq (%r13), %rcx #sets src into register
+      addq %rcx, %rbx #adds to 0
+      rmmovq %rcx, (%r14) #inserts src into dest  
+      addq %r10, %r13 #move to next quad
+      addq %r10, %r14
+      subq %r12, %rax
+      jne loop
+      halt
+ 
+   ###
+   .align 8
+   # Source block
+   src:
+      .quad 0xaaaa
+      .quad 0xbbbb
+      .quad 0xcccc
+   # Destination block
+   dest:
+      .quad 0x1111
+      .quad 0x2222
+      .quad 0x3333
