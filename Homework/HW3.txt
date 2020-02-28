@@ -14,10 +14,6 @@ Ben Paine HW3
       rmmovq %rax,(%rcx)
 
 2. 
-   irmovq $3,%rax
-   # YOUR CODE HERE
-   ###
-
    irmovq src, %r13 #set source
    irmovq dest, %r14 #set dest
    irmovq 0, %rbx  #start of loop
@@ -33,16 +29,18 @@ Ben Paine HW3
       subq %r12, %rax
       jne loop
       halt
- 
-   ###
-   .align 8
-   # Source block
-   src:
-      .quad 0xaaaa
-      .quad 0xbbbb
-      .quad 0xcccc
-   # Destination block
-   dest:
-      .quad 0x1111
-      .quad 0x2222
-      .quad 0x3333
+
+3.
+   irmovq ele1, %rbx
+   irmovq list, %r14
+   mrmovq (%r14), %rax
+   irmovq $8, %r8
+
+   loop:
+      mrmovq (%rbx), %r10
+      addq %r10, %rax
+      addq %r8, %rbx
+      addq %r10, %r10
+      jne loop
+
+4.
