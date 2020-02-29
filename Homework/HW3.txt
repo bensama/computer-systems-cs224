@@ -4,7 +4,7 @@ Ben Paine HW3
    a. irmovq 10, %rax
    b. addq %rax, %rcx
    c. andq %rax, %rax
-      call ifzero
+      je ifzero
    d. rrmovq %rax, %rcx
       rrmovq %rbx, %rax
       rrmovq %rcx, %rbx
@@ -14,6 +14,7 @@ Ben Paine HW3
       rmmovq %rax,(%rcx)
 
 2. 
+   irmovq $3,%rax
    irmovq src, %r13 #set source
    irmovq dest, %r14 #set dest
    irmovq 0, %rbx  #start of loop
@@ -30,6 +31,18 @@ Ben Paine HW3
       jne loop
       halt
 
+   .align 8
+   # Source block 
+   src:
+      .quad 0xaaaa 
+      .quad 0xbbbb 
+      .quad 0xcccc
+   # Destination block
+   dest:
+      .quad 0x1111 
+      .quad 0x2222 
+      .quad 0x3333
+
 3.
    irmovq ele1, %rbx
    irmovq list, %r14
@@ -44,3 +57,51 @@ Ben Paine HW3
       jne loop
 
 4.
+   irmovq $10, %rax
+   irmovq $9, %rdx
+   irmovq data, %r8            #main data
+   irmovq 8, %r9               #offset
+   irmovq 1, %r10              #increment
+
+   forloopone:                 #k < n-1
+      rrmovq %rdx, %rdi
+      rrmovq %r8, %rsp
+      subq %r10, %rax          #increment down
+      jne forlooptwo           #if not 0 then go to for loop two
+      halt
+
+   forlooptwo:                 #i < n-2
+      mrmovq (%rsp), %r13      #move data into register A[i]
+      mrmovq 8(%rsp), %r14     #move data into register A[i+1]
+      rrmovq %r13, %rbx
+      rrmovq %r14, %rcx
+      subq %rbx, %rcx         #subtracts A[i] from A[i+1]
+      jl swap                 #jump to swap if greater than
+      addq %r9, %rsp           #move to next quad
+      subq %r10, %rdi         #inc down
+      jne forlooptwo           #if at 0, then go back to for loop one
+      jmp forloopone
+    
+   swap:
+      mrmovq (%rsp), %r12      #create temp holding place
+      rmmovq %r14, (%rsp)      #move A[i+1] into A[i] spot
+      rmmovq %r12, 8(%rsp)     #move A[i] into A[i+1] spot
+      
+      addq %r9, %rsp           #move to next quad
+      subq %r10, %rdi         #inc down
+      jne forlooptwo          
+      jmp forloopone    
+
+   .align 8
+   data:
+      .quad 0x05
+      .quad 0x0a
+      .quad 0x08
+      .quad 0x02
+      .quad 0x01
+      .quad 0x03
+      .quad 0x06
+      .quad 0x04
+      .quad 0x09
+      .quad 0x07
+    
