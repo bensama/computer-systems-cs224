@@ -7,7 +7,7 @@ const int MAX_MEM_SIZE  = (1 << 13);
 
 void fetchStage(int *icode, int *ifun, int *rA, int *rB, wordType *valC, wordType *valP) {
   wordType pc = getPC();
-  byteType byte = getByteFromMemory(pc);
+  byteType byte = getByteFromMemory(pc); // M_1
 
   *icode = (byte >> 4) & 0xf;
   *ifun = byte & 0xf;
@@ -20,15 +20,25 @@ void fetchStage(int *icode, int *ifun, int *rA, int *rB, wordType *valC, wordTyp
   if (*icode == NOP) {
     *valP = pc + 1;
   }
+
+  if (*icode == IRMOVQ) {
+    byte = getByteFromMemory(pc + 1);
+    *rA = (byte >> 4) & 0xf;
+    *rB = byte & 0xf;
+    *valC = getWordFromMemory(pc + 2);
+    *valP = pc + 10;
+  }
 }
 
 
 void decodeStage(int icode, int rA, int rB, wordType *valA, wordType *valB) {
- 
+
 }
 
 void executeStage(int icode, int ifun, wordType valA, wordType valB, wordType valC, wordType *valE, bool *Cnd) {
-  
+  if (icode == IRMOVQ){
+    *valE = 0 + valC;
+  }
 }
 
 void memoryStage(int icode, wordType valA, wordType valP, wordType valE, wordType *valM) {
@@ -36,7 +46,9 @@ void memoryStage(int icode, wordType valA, wordType valP, wordType valE, wordTyp
 }
 
 void writebackStage(int icode, wordType rA, wordType rB, wordType valE, wordType valM) {
- 
+  if(icode == IRMOVQ) {
+    setRegister(rB, valE);
+  }
 }
 
 void pcUpdateStage(int icode, wordType valC, wordType valP, bool Cnd, wordType valM) {
