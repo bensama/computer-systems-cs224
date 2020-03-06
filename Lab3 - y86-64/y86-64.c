@@ -28,16 +28,29 @@ void fetchStage(int *icode, int *ifun, int *rA, int *rB, wordType *valC, wordTyp
     *valC = getWordFromMemory(pc + 2);
     *valP = pc + 10;
   }
+
+  if (*icode == RRMOVQ) {
+    byte = getByteFromMemory(pc + 1);
+    *rA = (byte >> 4) & 0xf;
+    *rB = byte & 0xf;
+    *valP = pc + 2;
+  }
 }
 
 
 void decodeStage(int icode, int rA, int rB, wordType *valA, wordType *valB) {
-
+  if (icode == RRMOVQ) {
+    setRegister(rA, *valA); 
+  }
 }
 
 void executeStage(int icode, int ifun, wordType valA, wordType valB, wordType valC, wordType *valE, bool *Cnd) {
   if (icode == IRMOVQ){
     *valE = 0 + valC;
+  }
+
+  if (icode == RRMOVQ) {
+    *valE = 0 + valA;
   }
 }
 
@@ -47,6 +60,10 @@ void memoryStage(int icode, wordType valA, wordType valP, wordType valE, wordTyp
 
 void writebackStage(int icode, wordType rA, wordType rB, wordType valE, wordType valM) {
   if(icode == IRMOVQ) {
+    setRegister(rB, valE);
+  }
+
+  if (icode == RRMOVQ) {
     setRegister(rB, valE);
   }
 }
