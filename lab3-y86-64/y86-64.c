@@ -160,7 +160,12 @@ void executeStage(int icode, int ifun, wordType valA, wordType valB, wordType va
         setFlags(0, 1, 0);
       }
       else {
-        setFlags(0, 0, 0);
+        if (*valE >= 0) {
+          setFlags(0, 0, 0);
+        }
+        else {
+          setFlags(1, 0, 0);
+        }
       }
     } 
     else if (ifun == SUB) {
@@ -169,26 +174,36 @@ void executeStage(int icode, int ifun, wordType valA, wordType valB, wordType va
         setFlags(0, 1, 0);
       }
       else {
-        setFlags(0, 0, 0);
+        if (*valE >= 0) {
+          setFlags(0, 0, 0);
+        }
+        else {
+          setFlags(1, 0, 0);
+        }
       }
     }
     else if (ifun == XOR) {
-      *valE = valB || valA;
-      if (valA == valB) {
+      *valE = valB ^ valA;
+      if (*valE == 0) {
         setFlags(0, 1, 0);
       }
+      else if (*valE < 0) {
+        setFlags(1, 0, 0);
+      } 
       else {
         setFlags(0, 0, 0);
       }
     }
     else if (ifun == AND) {
-      *valE = valB ^ valA;
-
-      if (valA == 1 && valB == 1) {
-        setFlags(0, 0, 0); 
+      *valE = valB & valA;
+      if (*valE == 0) {
+        setFlags(0, 1, 0); 
+      }
+      else if (*valE < 0) {
+        setFlags(1, 0, 0);
       }
       else {
-        setFlags(0, 1, 0);
+        setFlags(0, 0, 0);
       }
     }
   }
