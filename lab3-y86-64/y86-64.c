@@ -153,57 +153,122 @@ void executeStage(int icode, int ifun, wordType valA, wordType valB, wordType va
     *valE = valB + valC;
   }
 
+  /**
+   * overflow flag 
+   * ADD: if both values are one sign and the result is a different sign throw overflow flag
+   * SUB: valB >= 0 && -(valA) >= 0 && valE <= 0
+   */
+
   if (icode == OPQ) {
     if (ifun == ADD) {
+      *valE = valB + valA;
+      if (*valE == 0){
+        setFlags(0, 1, 0);
+      }     
+      else if (valB >= 0 && valA >= 0 && valE <= 0) {
+        if (*valE >= 0) {
+          setFlags(0, 0, 1);
+        }
+        else {
+          setFlags(1, 0, 1);
+        }
+      }
+      else if (valB <= 0 && valA <= 0 && valE >= 0) {
+        if (*valE >= 0) {
+          setFlags(0, 0, 1);
+        }
+        else {
+          setFlags(1, 0, 1);
+        }
+      }
+      else {
+        if (*valE >= 0) {
+          setFlags(0, 0, 1);
+        }
+        else {
+          setFlags(1, 0, 1);
+        }
+      }      
+    } 
+    else if (ifun == SUB) {
       *valE = valB + valA;
       if (*valE == 0) {
         setFlags(0, 1, 0);
       }
-      else {
+      else if (valB >= 0 && valA >= 0 && valE <= 0) {
         if (*valE >= 0) {
-          setFlags(0, 0, 0);
+          setFlags(0, 0, 1);
         }
         else {
-          setFlags(1, 0, 0);
+          setFlags(1, 0, 1);
         }
       }
-    } 
-    else if (ifun == SUB) {
-      *valE = valB - valA;
-      if(*valE == 0) {
-        setFlags(0, 1, 0);
+      else if (valB <= 0 && valA <= 0 && valE >= 0) {
+        if (*valE >= 0) {
+          setFlags(0, 0, 1);
+        }
+        else {
+          setFlags(1, 0, 1);
+        }
       }
       else {
         if (*valE >= 0) {
-          setFlags(0, 0, 0);
+          setFlags(0, 0, 1);
         }
         else {
-          setFlags(1, 0, 0);
+          setFlags(1, 0, 1);
         }
       }
     }
     else if (ifun == XOR) {
+      // check if overflow is already thrown
       *valE = valB ^ valA;
-      if (*valE == 0) {
-        setFlags(0, 1, 0);
+      if (!overflowFlag) {
+        if (*valE == 0) {
+          setFlags(0, 1, 0);
+        }
+        else if (*valE < 0) {
+          setFlags(1, 0, 0);
+        }
+        else {
+          setFlags(0, 0, 0);
+        }
       }
-      else if (*valE < 0) {
-        setFlags(1, 0, 0);
-      } 
       else {
-        setFlags(0, 0, 0);
+        if (*valE == 0){
+          setFlags(0, 1, 1);
+        }
+        else if (*valE < 0){
+          setFlags(1, 0, 1);
+        }
+        else {
+          setFlags(0, 0, 1);
+        }
       }
     }
     else if (ifun == AND) {
       *valE = valB & valA;
-      if (*valE == 0) {
-        setFlags(0, 1, 0); 
-      }
-      else if (*valE < 0) {
-        setFlags(1, 0, 0);
+      if (!overflowFlag) {
+        if (*valE == 0) {
+          setFlags(0, 1, 0);
+        }
+        else if (*valE < 0) {
+          setFlags(1, 0, 0);
+        }
+        else {
+          setFlags(0, 0, 0);
+        }
       }
       else {
-        setFlags(0, 0, 0);
+        if (*valE == 0) {
+          setFlags(0, 1, 1);
+        }
+        else if (*valE < 0) {
+          setFlags(1, 0, 1);
+        }
+        else {
+          setFlags(0, 0, 1);
+        }
       }
     }
   }
