@@ -1,29 +1,35 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 10, 15	sdk_version 10, 15
-	.globl	_scale                  ## -- Begin function scale
-	.p2align	4, 0x90
-_scale:                                 ## @scale
+	.file	"scale.c"
+	.text
+	.globl	scale
+	.type	scale, @function
+scale:
+.LFB0:
 	.cfi_startproc
-## %bb.0:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
+	.cfi_offset 6, -16
 	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	%rsi, -16(%rbp)
-	movq	%rdx, -24(%rbp)
-	movq	-8(%rbp), %rdx
-	movq	-16(%rbp), %rsi
-	shlq	$2, %rsi
-	addq	%rsi, %rdx
-	imulq	$12, -24(%rbp), %rsi
-	addq	%rsi, %rdx
-	movq	%rdx, -32(%rbp)
+	.cfi_def_cfa_register 6
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movq	%rdx, -40(%rbp)
 	movq	-32(%rbp), %rax
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	leaq	(%rdx,%rax), %rcx
+	movq	-40(%rbp), %rdx
+	movq	%rdx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
 	popq	%rbp
-	retq
+	.cfi_def_cfa 7, 8
+	ret
 	.cfi_endproc
-                                        ## -- End function
-
-.subsections_via_symbols
+.LFE0:
+	.size	scale, .-scale
+	.ident	"GCC: (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+	.section	.note.GNU-stack,"",@progbits
