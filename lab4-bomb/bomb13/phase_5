@@ -1,0 +1,34 @@
+Dump of assembler code for function phase_5:
+=> 0x00000000004011bf <+0>:     push   %rbx
+   0x00000000004011c0 <+1>:     sub    $0x10,%rsp
+   0x00000000004011c4 <+5>:     mov    %rdi,%rbx
+   0x00000000004011c7 <+8>:     mov    %fs:0x28,%rax
+   0x00000000004011d0 <+17>:    mov    %rax,0x8(%rsp)
+   0x00000000004011d5 <+22>:    xor    %eax,%eax
+   0x00000000004011d7 <+24>:    callq  0x401450 <string_length>
+   0x00000000004011dc <+29>:    cmp    $0x6,%eax
+   0x00000000004011df <+32>:    je     0x4011e6 <phase_5+39>
+   0x00000000004011e1 <+34>:    callq  0x401742 <explode_bomb>
+   0x00000000004011e6 <+39>:    mov    $0x0,%eax
+   0x00000000004011eb <+44>:    movzbl (%rbx,%rax,1),%edx
+   0x00000000004011ef <+48>:    and    $0xf,%edx
+   0x00000000004011f2 <+51>:    movzbl 0x4027a0(%rdx),%edx
+   0x00000000004011f9 <+58>:    mov    %dl,(%rsp,%rax,1)
+   0x00000000004011fc <+61>:    add    $0x1,%rax
+   0x0000000000401200 <+65>:    cmp    $0x6,%rax
+   0x0000000000401204 <+69>:    jne    0x4011eb <phase_5+44>
+   0x0000000000401206 <+71>:    movb   $0x0,0x6(%rsp)
+   0x000000000040120b <+76>:    mov    $0x40274f,%esi
+   0x0000000000401210 <+81>:    mov    %rsp,%rdi
+   0x0000000000401213 <+84>:    callq  0x40146e <strings_not_equal>
+   0x0000000000401218 <+89>:    test   %eax,%eax
+   0x000000000040121a <+91>:    je     0x401221 <phase_5+98>
+   0x000000000040121c <+93>:    callq  0x401742 <explode_bomb>
+   0x0000000000401221 <+98>:    mov    0x8(%rsp),%rax
+   0x0000000000401226 <+103>:   xor    %fs:0x28,%rax
+   0x000000000040122f <+112>:   je     0x401236 <phase_5+119>
+   0x0000000000401231 <+114>:   callq  0x400b90 <__stack_chk_fail@plt>
+   0x0000000000401236 <+119>:   add    $0x10,%rsp
+   0x000000000040123a <+123>:   pop    %rbx
+   0x000000000040123b <+124>:   retq   
+End of assembler dump.
