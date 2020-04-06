@@ -1,0 +1,868 @@
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+socket
+strcpy
+__printf_chk
+exit
+fopen
+strncmp
+__isoc99_sscanf
+connect
+signal
+puts
+time
+__stack_chk_fail
+stdin
+strtol
+mmap
+memset
+__errno_location
+read
+getopt
+__fprintf_chk
+memcpy
+__memmove_chk
+strtoul
+strcasecmp
+optarg
+stderr
+alarm
+munmap
+gethostbyname
+gethostname
+srandom
+close
+__sprintf_chk
+_IO_getc
+__libc_start_main
+write
+__gmon_start__
+GLIBC_2.7
+GLIBC_2.14
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.2.5
+%zC 
+%rC 
+%jC 
+%bC 
+%ZC 
+%RC 
+%JC 
+%BC 
+%:C 
+%2C 
+%*C 
+%"C 
+%RA 
+=tE 
+=ID 
+AVAUATUSA
+=1C 
+=bB 
+=MB 
+t*D;5
+=$A 
+[]A\A]A^
+D$(1
+D$ i
+D$ i
+D$ i
+D$ i
+D$$i
+D$$i
+D$ i
+D$$i
+D$ i
+D$ i
+D$$i
+D$$i
+D$$i
+D$ i
+D$ i
+t$(dH34%(
+9=W< 
+ATUSH
+D$x1
+\$xdH3
+[]A\
+=E; 
+ATUSI
+[]A\
+h@U`
+VPRD
+5?5 
+= 5 
+tk9=
+I;=H7 
+[AZ]I
+=96 
+=,5 
+`XUt7
+=S4 
+=B4 
+AUATUSH
+[]A\A]
+AUATUSH
+[]A\A]
+AUATUSH
+[]A\A]
+ATUSH
+dH34%(
+[]A\
+AWAVAUATUSH
+Error: CH
+lient unH
+able to H
+create sH
+C ockef
+Error: DH
+NS is unH
+able to H
+resolve H
+server aH
+C(ddref
+C,ss
+Error: UH
+nable toH
+ connectH
+ to the H
+C servf
+C$er
+Error: RH
+esult stH
+ring tooH
+ large. H
+IncreaseH
+ SUBMITRH
+_MAXBUF
+Error: RH
+esult stH
+ring conH
+tains anH
+ illegalH
+ or unprH
+intable H
+characteH
+C@r.
+Error: CH
+lient unH
+able to H
+write toH
+ the resH
+ult servH
+C0er
+Error: CH
+lient unH
+able to H
+read firH
+st headeH
+r from rH
+esult seH
+C8rver
+Error: CH
+lient unH
+able to H
+read heaH
+ders froH
+m the reH
+sult serH
+C8ver
+Error: CH
+lient unH
+able to H
+read staH
+tus messH
+age fromH
+ result H
+C8servf
+C<er
+[]A\A]A^A_
+Error: CH
+lient unH
+able to H
+create sH
+E ockef
+Error: DH
+NS is unH
+able to H
+resolve H
+server aH
+E(ddref
+E,ss
+Error: UH
+nable toH
+ connectH
+ to servH
+E er
+AWAVA
+AUATL
+[]A\A]A^A_
+Usage: [-h] %s -i <infile> -a <authkey> -l <level>
+  -h           Print help information
+  -a <authkey> Authentication key
+  -h          Print help information
+  -q          Don't submit result to server
+FAILED: Initialization error: Running on unknown host
+FAILED: Initialization error: Running on an illegal host [%s]
+FAILED: Initialization error:
+Supplied authentication key 0x%x != target key
+  -i <infile>  Input file
+  -l <level>   Attack level
+Usage: [-hq] %s -i <infile> 
+  -i <infile> Input file
+hqi:
+hi:a:l:
+Cannot open input file '%s'
+Unknown flag '%c'
+Cookie: 0x%x
+bpaine
+attacklab
+CS224
+petra
+pyramids
+tajmahalu
+chichenitza
+colosseum
+cristoredentor
+greatwall
+hanginggardens
+machupicchu
+parthenon
+maine
+california
+carolina
+colorado
+florida
+iowa
+indiana
+illinois
+kentucky
+lousiana
+vermont
+utah
+texas
+tennesee
+singapore
+japan
+italy
+joust
+asteroids
+harrier
+prowler
+tiger
+viper
+tiefighter
+teton
+olympic
+kingscanyon
+glacier
+craterlake
+cs224
+Touch1!: You called touch1()
+%.8x
+Touch2!: You called touch2(0x%.8x)
+Misfire: You called touch2(0x%.8x)
+Touch3!: You called touch3("%s")
+Misfire: You called touch3("%s")
+No exploit.  Getbuf returned 0x%x
+FAIL	%ctarget	%d	%s
+PASS
+FAIL
+%d:%s:0x%.8x:%ctarget:%d:%s
+FAILED: %s
+NICE JOB!
+FAILED
+	user id	%s
+	course	%s
+	lab	%s
+	result	%s
+Mismatched validation levels
+PASS	%ctarget	%d	%s
+Bus error
+Better luck next time
+Segmentation Fault
+Illegal instruction
+Timeout
+Type string:
+No exploit
+Normal return
+Internal Error: Input string is too large.
+PASS: Sent exploit string to server to be validated.
+%s: Would have posted the following:
+Check level %d != attack level %d
+Valid solution for level %d with target %ctarget
+Crash!: You caused a bus error!
+Ouch!: You caused a segmentation fault!
+Oops!: You executed an illegal instruction
+Timeout!: Your attack takes more than %d seconds
+Couldn't map stack to segment at 0x%lx
+0123456789ABCDEFProgram timed out after %d seconds
+GET /submit?user=%s&course=%s&result=%s HTTP/1.0
+Host: %s
+Error: HTTP request failed with error %d: %s
+%%%02X
+%s %d %[a-zA-z ]
+cs224.byu.edu
+AUTORESULT_STRING=%s
+;*3$"
+GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+(lab
+'  -h           Print help information
+  -i <infile>  Input file
+#  -a <authkey> Authentication key
+  -l <level>   Attack level
+&  -h          Print help information
+-  -q          Don't submit result to server
+  -i <infile> Input file
+7FAILED: Initialization error: Running on unknown host
+#lab
+Touch1!: You called touch1()
+&sig
+&sig
+#_ @
+#w @
+.lab
+6PASS: Sent exploit string to server to be validated.
+NICE JOB!
+FAILED
+Mismatched validation levels
+Bus error
+!Crash!: You caused a bus error!
+Better luck next time
+Segmentation Fault
+)Ouch!: You caused a segmentation fault!
+Illegal instruction
+,Oops!: You executed an illegal instruction
+	Timeout
+No exploit
+Normal return
+!sig
+%$!@
+*J!@
++T!@
+,cnt
+*G"@
+!src
+!dst
+,len
+-buf
+%o#@
+!lab
+})J	
+-rio
+}-buf
+,__v
+,__x
+%Q'@
+0U)@
+4U)@
+%`*@
+*{$@
+*9%@
+*`&@
+*s'@
+*K)@
+*"*@
+*g*@
++ +@
+*Q+@
+%X+@
+*w,@
+*#-@
++G-@
+;lab
+%n-@
+&Error: Client unable to create socket
+/Error: DNS is unable to resolve server address
+'Error: Unable to connect to the server
+8Error: Result string too large. Increase SUBMITR_MAXBUF
+CError: Result string contains an illegal or unprintable character.
+3Error: Client unable to write to the result server
+=Error: Client unable to read first header from result server
+<Error: Client unable to read headers from the result server
+?Error: Client unable to read status message from result server
+#Error: Unable to connect to server
+/usr/include/x86_64-linux-gnu/bits
+/usr/include
+/usr/lib/gcc/x86_64-linux-gnu/5/include
+../common
+main.c
+stdio2.h
+unistd.h
+stdlib.h
+stddef.h
+types.h
+stdio.h
+libio.h
+getopt.h
+target.h
+config.h
+<built-in>
+string.h
+driverlib.h
+gencookie.h
+time.h
+signal.h
+unistd.h
+scramble-32.c
+/usr/lib/gcc/x86_64-linux-gnu/5/include
+/usr/include/x86_64-linux-gnu/bits
+/usr/include
+buf.c
+stddef.h
+types.h
+stdio.h
+libio.h
+config.h
+target.h
+config.c
+/usr/include/x86_64-linux-gnu/bits
+/usr/lib/gcc/x86_64-linux-gnu/5/include
+/usr/include
+visible.c
+stdio2.h
+stddef.h
+types.h
+stdio.h
+libio.h
+config.h
+target.h
+stdlib.h
+<built-in>
+string.h
+/usr/include/x86_64-linux-gnu/bits
+/usr/lib/gcc/x86_64-linux-gnu/5/include
+/usr/include
+/usr/include/x86_64-linux-gnu/sys
+support.c
+stdio2.h
+string3.h
+stddef.h
+types.h
+stdio.h
+libio.h
+config.h
+target.h
+stdlib.h
+<built-in>
+driverlib.h
+mman.h
+/usr/include/x86_64-linux-gnu/bits
+/usr/lib/gcc/x86_64-linux-gnu/5/include
+/usr/include
+/usr/include/netinet
+/usr/include/x86_64-linux-gnu/sys
+driverlib.c
+stdio2.h
+unistd.h
+string3.h
+stddef.h
+types.h
+stdio.h
+libio.h
+sockaddr.h
+socket.h
+stdint.h
+in.h
+netdb.h
+signal.h
+driverlib.h
+stdlib.h
+unistd.h
+errno.h
+<built-in>
+socket.h
+socket_type.h
+ILILIL
+I@KZ
+/usr/include
+gencookie.c
+stdlib.h
+[biZ##
+_old_offset
+__builtin_puts
+__printf_chk
+usage
+argc
+_IO_save_end
+_IO_write_end
+user_id
+short int
+sizetype
+notify
+srandom
+check_fail
+_IO_write_ptr
+main
+_IO_buf_base
+infile
+_markers
+_IO_read_end
+stable
+initialize_target
+buf_offset
+__buf
+is_checker
+course
+vlevel
+stderr
+long long int
+_lock
+force_random
+strtol
+_cur_column
+__pad4
+_pos
+fprintf
+atoi
+__buflen
+argv
+exit
+_sbuf
+_IO_FILE
+strtoul
+unsigned char
+status_msg
+host_table
+target_id
+optarg
+long long unsigned int
+_shortbuf
+_IO_marker
+__fprintf_chk
+gethostname
+_IO_write_base
+_unused2
+__stack_chk_fail
+_IO_read_ptr
+_vtable_offset
+getopt
+_IO_buf_end
+stable_launch
+init_driver
+signal
+opt_level
+__pad1
+__pad2
+__pad3
+alarm
+__pad5
+check_level
+_next
+optstring
+short unsigned int
+__fmt
+opt_authkey
+main.c
+gencookie
+__off64_t
+scramble
+_chain
+__off_t
+valid_host
+_IO_backup_base
+stdin
+/home/cs224/cs224-admin/labs/attacklab/src/build
+_flags2
+_mode
+_IO_read_base
+GNU C11 5.4.0 20160609 -mtune=generic -march=x86-64 -g -Og -fstack-protector-strong
+time
+target_prefix
+fopen
+_IO_save_base
+strcasecmp
+_fileno
+__gethostname_alias
+__stream
+__nptr
+_flags
+stdout
+_IO_lock_t
+rval
+scramble-32.c
+getbuf
+buf.c
+GNU C11 5.4.0 20160609 -mtune=generic -march=x86-64 -g -Og -fno-stack-protector
+Gets
+config.c
+test
+sprintf
+hexmatch
+sval
+validate
+visible.c
+__builtin___sprintf_chk
+strncmp
+touch1
+touch2
+touch3
+cbuf
+stack_top
+__ch
+save_term
+__builtin_memset
+global_save_stack
+save_char
+global_offset
+mmap
+gets_cnt
+driver_post
+gets_buf
+munmap
+space
+seghandler
+illegalhandler
+__dest
+_IO_getc
+__len
+support.c
+bushandler
+trans_char
+status
+autoresult
+sigalrmhandler
+notify_server
+new_stack
+pass
+__builtin___memmove_chk
+__read_alias
+socket
+close
+serveraddr
+in_port_t
+bcopy
+__s2
+__sighandler_t
+SOCK_NONBLOCK
+nleft
+rio_fd
+in_addr_t
+userid
+usrbuf
+bufp
+__s2_len
+__ssize_t
+rio_readinitb
+SOCK_STREAM
+hostent
+uint16_t
+__result
+rio_writen
+req_size
+sin_zero
+SOCK_RDM
+s_addr
+urlencode
+rio_read
+h_name
+sigalrm_handler
+sin_addr
+rio_t
+__src
+h_addrtype
+__fd
+write
+sin_family
+version
+rio_cnt
+rio_bufptr
+maxlen
+h_aliases
+SOCK_PACKET
+rio_buf
+bzero
+errcode
+__s1_len
+SOCK_DCCP
+sin_port
+sa_family
+h_length
+h_addr_list
+__socket_type
+nwritten
+__builtin_strcpy
+init_timeout
+submitr
+connect
+__isoc99_sscanf
+gethostbyname
+sockaddr
+rio_readlineb
+__errno_location
+driverlib.c
+errmsg
+memcpy
+enc_result
+sa_family_t
+SOCK_CLOEXEC
+__nbytes
+SOCK_DGRAM
+sockaddr_in
+autograded
+sa_data
+SOCK_RAW
+clientfd
+result_size
+SOCK_SEQPACKET
+uint32_t
+check
+/home/cs224/cs224-admin/labs/attacklab/src/common
+gencookie.c
+crtstuff.c
+__JCR_LIST__
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7585
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+main.c
+usage
+initialize_target
+scramble-32.c
+buf.c
+config.c
+visible.c
+support.c
+save_char
+gets_cnt
+trans_char
+gets_buf
+save_term
+driverlib.c
+rio_readinitb
+rio_writen
+rio_read
+rio_readlineb
+urlencode
+gencookie.c
+__FRAME_END__
+__JCR_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+strcasecmp@@GLIBC_2.2.5
+__errno_location@@GLIBC_2.2.5
+srandom@@GLIBC_2.2.5
+strncmp@@GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+scramble
+stack_top
+strcpy@@GLIBC_2.2.5
+puts@@GLIBC_2.2.5
+stdin@@GLIBC_2.2.5
+touch2
+write@@GLIBC_2.2.5
+hexmatch
+_edata
+stable_launch
+__stack_chk_fail@@GLIBC_2.4
+mmap@@GLIBC_2.2.5
+submitr
+buf_offset
+check_level
+memset@@GLIBC_2.2.5
+notify
+init_driver
+getbuf
+alarm@@GLIBC_2.2.5
+close@@GLIBC_2.2.5
+target_prefix
+seghandler
+read@@GLIBC_2.2.5
+__libc_start_main@@GLIBC_2.2.5
+vlevel
+__data_start
+signal@@GLIBC_2.2.5
+global_offset
+optarg@@GLIBC_2.2.5
+gethostbyname@@GLIBC_2.2.5
+course
+Gets
+__memmove_chk@@GLIBC_2.3.4
+__gmon_start__
+strtol@@GLIBC_2.2.5
+__dso_handle
+memcpy@@GLIBC_2.14
+_IO_stdin_used
+check_fail
+host_table
+authkey
+time@@GLIBC_2.2.5
+__libc_csu_init
+_IO_getc@@GLIBC_2.2.5
+__isoc99_sscanf@@GLIBC_2.7
+user_id
+notify_server
+sigalrmhandler
+touch3
+validate
+touch1
+infile
+sigalrm_handler
+init_timeout
+global_save_stack
+__bss_start
+munmap@@GLIBC_2.2.5
+main
+__printf_chk@@GLIBC_2.3.4
+illegalhandler
+fopen@@GLIBC_2.2.5
+_Jv_RegisterClasses
+driver_post
+target_id
+getopt@@GLIBC_2.2.5
+bushandler
+strtoul@@GLIBC_2.2.5
+check
+gethostname@@GLIBC_2.2.5
+exit@@GLIBC_2.2.5
+connect@@GLIBC_2.2.5
+__TMC_END__
+__fprintf_chk@@GLIBC_2.3.4
+_ITM_registerTMCloneTable
+gencookie
+is_checker
+stderr@@GLIBC_2.2.5
+__sprintf_chk@@GLIBC_2.3.4
+socket@@GLIBC_2.2.5
+test
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.jcr
+.dynamic
+.got.plt
+.data
+.bss
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+.debug_loc
