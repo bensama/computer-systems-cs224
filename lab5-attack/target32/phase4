@@ -1,8 +1,0 @@
-
-0000000000401b25 <getval_486>:
-  401b25:	b8 48 8b e0 90       	mov    $0x90e08b48,%eax
-  401b2a:	c3                   	retq   
-
-0000000000401a6b <setval_212>:
-  401a6b:	c7 07 48 89 c7 c3    	movl   $0xc3c78948,(%rdi)
-  401a71:	c3                   	retq   
